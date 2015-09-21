@@ -23,3 +23,14 @@ exports['Filelink'] = function (test) {
     });
 };
 
+
+exports['Link dir'] = function (test) {
+    filelink(__dirname, __dirname + '/../tmp/foo/baz', {
+        mkdirp: true,
+        force: true
+    }, function (err) {
+        test.ifError(err);
+        test.done();
+    });
+};
+
