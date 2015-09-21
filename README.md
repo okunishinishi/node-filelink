@@ -61,11 +61,34 @@ $ npm install filelink --save
 Usage
 ---------
 
-```javascript
+Create a relative symlink.
 
+```javascript
+var filelink = require('filelink');
+
+filelink('src/foo.js', 'dest/foo-link.js', {
+    force: true
+}, function (err) {
+    /*...*/
+});
 ```
 
+
+
 <!-- Section from "doc/readme/02.Usage.md.hbs" End -->
+
+<!-- Section from "doc/readme/03.Options.md.hbs" Start -->
+
+<a name="section-doc-readme-03-options-md"></a>
+Opitons
+-------
+
+| Key | Description | Default |
+| --- | ---- | --- |
+| type | Type of link. "symlink" or "link" | "symlink" |
+| force | Force to create link. | false |
+| mkdirp | Create parent directories. | false |
+<!-- Section from "doc/readme/03.Options.md.hbs" End -->
 
 
 <!-- Sections Start -->
