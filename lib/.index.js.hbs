@@ -6,10 +6,10 @@
 
 "use strict";
 
-var filelink = require('./filelink'),
+const filelink = require('./filelink'),
     pkg = require('../package.json');
 
-var lib = filelink.bind(this);
+let lib = filelink.bind(this);
 
 lib.filelink = filelink;
 lib.version = pkg;

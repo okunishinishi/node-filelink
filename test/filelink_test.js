@@ -1,36 +1,30 @@
 /**
  * Test case for filelink.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var filelink = require('../lib/filelink.js');
+const filelink = require('../lib/filelink.js'),
+    assert = require('assert');
 
-exports.setUp = function (done) {
-    done();
-};
-
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['Filelink'] = function (test) {
+it('Filelink', (done) => {
     filelink(__filename, __dirname + '/../tmp/foo/bar', {
         mkdirp: true,
         force: true
-    }, function (err) {
-        test.ifError(err);
-        test.done();
+    }, (err) => {
+        assert.ifError(err);
+        done();
     });
-};
+});
 
 
-exports['Link dir'] = function (test) {
+it('Link dir', (done) => {
     filelink(__dirname, __dirname + '/../tmp/foo/baz', {
         mkdirp: true,
         force: true
-    }, function (err) {
-        test.ifError(err);
-        test.done();
+    }, (err) => {
+        assert.ifError(err);
+        done();
     });
-};
+});
 
