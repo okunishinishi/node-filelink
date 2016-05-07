@@ -1,9 +1,9 @@
-"use strict";
+'use strict'
 
-const filelink = require('filelink');
+const filelink = require('filelink')
 
 filelink('src/foo.js', 'dest/foo-link.js', {
-    force: true
-}, (err) => {
-    /*...*/
+  force: true
+}).then(() => {
+  /* ... */
 });

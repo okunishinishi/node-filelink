@@ -4,14 +4,14 @@
  * @version {{pkg.version}}
  */
 
-"use strict";
+'use strict'
 
-const filelink = require('./filelink'),
-    pkg = require('../package.json');
+const filelink = require('./filelink')
+const pkg = require('../package.json')
 
-let lib = filelink.bind(this);
+let lib = filelink.bind(this)
 
-lib.filelink = filelink;
-lib.version = pkg;
+lib.filelink = filelink
+lib.version = pkg.version
 
-module.exports = lib;
+module.exports = lib

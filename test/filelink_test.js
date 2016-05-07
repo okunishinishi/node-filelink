@@ -2,29 +2,33 @@
  * Test case for filelink.
  * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const filelink = require('../lib/filelink.js'),
-    assert = require('assert');
+const filelink = require('../lib/filelink.js')
+const assert = require('assert')
+const co = require('co')
+const fs = require('fs')
 
-it('Filelink', (done) => {
-    filelink(__filename, __dirname + '/../tmp/foo/bar', {
-        mkdirp: true,
-        force: true
-    }, (err) => {
-        assert.ifError(err);
-        done();
-    });
-});
+describe('filelink', () => {
+  it('Filelink', () => co(function * () {
+    yield filelink(__filename, __dirname + '/../tmp/foo/bar', {
+      mkdirp: true,
+      force: true
+    })
+    assert.ok(
+      fs.existsSync(__dirname + '/../tmp/foo/bar')
+    )
+  }))
 
+  it('Link dir', () => co(function * () {
+    yield filelink(__dirname, __dirname + '/../tmp/foo/baz', {
+      mkdirp: true,
+      force: true
+    })
+    assert.ok(
+      fs.existsSync(__dirname + '/../tmp/foo/baz')
+    )
+  }))
+})
 
-it('Link dir', (done) => {
-    filelink(__dirname, __dirname + '/../tmp/foo/baz', {
-        mkdirp: true,
-        force: true
-    }, (err) => {
-        assert.ifError(err);
-        done();
-    });
-});
-
+/* global describe, it */
