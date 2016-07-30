@@ -1,6 +1,6 @@
 {
   "name": "filelink",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "Create file links.",
   "main": "lib",
   "scripts": {
@@ -22,21 +22,20 @@
   },
   "homepage": "https://github.com/okunishinishi/node-filelink#readme",
   "dependencies": {
-    "argx": "^2.0.2",
+    "argx": "^3.0.0",
     "co": "^4.6.0",
-    "filedel": "^2.0.2",
+    "filedel": "^2.0.3",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.3"
+    "rimraf": "^2.5.4"
   },
   "devDependencies": {
-    "ape-covering": "^3.0.3",
-    "ape-releasing": "^4.0.1",
-    "ape-reporting": "^3.0.1",
-    "ape-tasking": "^4.0.3",
-    "ape-testing": "^4.0.1",
-    "ape-tmpl": "^5.0.12",
-    "ape-updating": "^4.0.4",
-    "coz": "^6.0.5",
+    "amocha": "^1.0.10",
+    "ape-releasing": "^4.0.4",
+    "ape-reporting": "^3.0.2",
+    "ape-tasking": "^4.0.8",
+    "ape-tmpl": "^5.0.15",
+    "ape-updating": "^4.0.5",
+    "coz": "^6.0.16",
     "injectmock": "^2.0.0"
   },
   "engines": {
