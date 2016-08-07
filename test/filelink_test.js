@@ -21,13 +21,25 @@ describe('filelink', () => {
   }))
 
   it('Link dir', () => co(function * () {
-    yield filelink(__dirname, __dirname + '/../tmp/foo/baz', {
-      mkdirp: true,
-      force: true
-    })
-    assert.ok(
-      fs.existsSync(__dirname + '/../tmp/foo/baz')
-    )
+    {
+      let changed = yield filelink(__dirname, __dirname + '/../tmp/foo/baz', {
+        mkdirp: true,
+        force: true
+      })
+      assert.ok(
+        fs.existsSync(__dirname + '/../tmp/foo/baz')
+      )
+    }
+    {
+      let changed = yield filelink(__dirname, __dirname + '/../tmp/foo/baz', {
+        mkdirp: true,
+        force: true
+      })
+      assert.ok(!changed)
+      assert.ok(
+        fs.existsSync(__dirname + '/../tmp/foo/baz')
+      )
+    }
   }))
 })
 
